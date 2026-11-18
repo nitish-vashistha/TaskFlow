@@ -493,9 +493,9 @@ Types: `feat`, `fix`, `docs`, `chore`, `test`, `refactor`, `style`
 
 | Phase | Status | Commit Hash | Notes |
 |-------|--------|-------------|-------|
-| Phase 0 – Preflight & Docs | IN_PROGRESS | – | Planning documents being created |
-| Phase 1 – Project Init | NOT_STARTED | – | – |
-| Phase 2 – Backend Domain | NOT_STARTED | – | – |
+| Phase 0 – Preflight & Docs | COMPLETED | 25c351e | Planning documents & architecture established |
+| Phase 1 – Project Init | COMPLETED | Pending | Spring Boot 3.2.5 (Java 17) & React 18+ (TS, Vite, Tailwind, RTL) initialized |
+| Phase 2 – Backend Domain | IN_PROGRESS | – | Domain entities, enums, repositories |
 | Phase 3 – Authentication | NOT_STARTED | – | – |
 | Phase 4 – Project Management | NOT_STARTED | – | – |
 | Phase 5 – Task Management | NOT_STARTED | – | – |
