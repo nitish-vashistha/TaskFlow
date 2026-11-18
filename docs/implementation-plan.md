@@ -495,9 +495,9 @@ Types: `feat`, `fix`, `docs`, `chore`, `test`, `refactor`, `style`
 |-------|--------|-------------|-------|
 | Phase 0 – Preflight & Docs | COMPLETED | 25c351e | Planning documents & architecture established |
 | Phase 1 – Project Init | COMPLETED | a447fa1 | Spring Boot 3.2.5 (Java 17) & React 18+ (TS, Vite, Tailwind, RTL) initialized |
-| Phase 2 – Backend Domain | COMPLETED | Pending | User, Project, Task entities, enums, JPA repositories, test verified |
-| Phase 3 – Authentication | IN_PROGRESS | – | Registration, login, BCrypt, JWT, Spring Security |
-| Phase 4 – Project Management | NOT_STARTED | – | – |
+| Phase 2 – Backend Domain | COMPLETED | 7530091 | User, Project, Task entities, enums, JPA repositories, test verified |
+| Phase 3 – Authentication | COMPLETED | Pending | Registration, Login, BCrypt, JWT provider & filter, Spring Security, tests |
+| Phase 4 – Project Management | IN_PROGRESS | – | Project CRUD, ownership enforcement, DTOs, service tests |
 | Phase 5 – Task Management | NOT_STARTED | – | – |
 | Phase 6 – Frontend Foundation | NOT_STARTED | – | – |
 | Phase 7 – Frontend Application | NOT_STARTED | – | – |
