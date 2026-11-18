@@ -6,6 +6,8 @@ import { ProtectedRoute } from './components/auth/ProtectedRoute';
 import { AppLayout } from './components/layout/AppLayout';
 import { LoginPage } from './pages/LoginPage';
 import { RegisterPage } from './pages/RegisterPage';
+import { DashboardPage } from './pages/DashboardPage';
+import { ProjectPage } from './pages/ProjectPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,8 +32,8 @@ export const App: React.FC = () => {
             {/* Protected routes */}
             <Route element={<ProtectedRoute />}>
               <Route element={<AppLayout />}>
-                <Route path="/dashboard" element={<div className="text-xl font-bold">Dashboard</div>} />
-                <Route path="/projects/:id" element={<div className="text-xl font-bold">Project Detail</div>} />
+                <Route path="/dashboard" element={<DashboardPage />} />
+                <Route path="/projects/:id" element={<ProjectPage />} />
               </Route>
             </Route>
 
