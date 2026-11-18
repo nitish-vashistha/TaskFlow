@@ -1,11 +1,10 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-describe('App Component', () => {
-  it('renders TaskFlow headline', () => {
+describe('App Router', () => {
+  it('redirects unauthenticated users to login page', () => {
     render(<App />);
-    expect(screen.getByText('TaskFlow')).toBeInTheDocument();
-    expect(screen.getByText('Team Task Management System')).toBeInTheDocument();
+    expect(screen.getByText('Sign in to TaskFlow')).toBeInTheDocument();
+    expect(screen.getByText('Work Email')).toBeInTheDocument();
   });
 });
