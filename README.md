@@ -44,29 +44,37 @@ When running with the default or dev profile, the application seeds the followin
 
 ## 3. Quick Start Guide
 
-### Prerequisites
-- **Java 17**
-- **Maven 3.8+**
-- **Node.js 18+** & **npm**
-- **Docker** (optional, for PostgreSQL container)
+### Option 1: Instant Start (Recommended)
+
+Run the backend and frontend with the provided zero-setup scripts:
+
+```bash
+# Terminal 1 - Start Backend (Starts Spring Boot on port 8080)
+./run-backend.sh
+
+# Terminal 2 - Start Frontend (Starts Vite React on port 5173)
+./run-frontend.sh
+```
+
+- **Web Application**: `http://localhost:5173`
+- **Interactive Swagger UI**: `http://localhost:8080/swagger-ui.html`
+- **H2 Database Console**: `http://localhost:8080/h2-console`
+- **Demo Login**: `alex@example.com` / `password123`
 
 ---
 
-### Option A: Running with Docker PostgreSQL
+### Option 2: Running with External PostgreSQL
 
 1. **Start PostgreSQL**:
    ```bash
    docker compose up -d
    ```
 
-2. **Start Backend**:
+2. **Start Backend with PostgreSQL Profile**:
    ```bash
    cd backend
-   export JAVA_HOME=$HOME/tools/jdk-17.0.2.jdk/Contents/Home
-   export PATH="$JAVA_HOME/bin:$HOME/tools/apache-maven-3.9.8/bin:$PATH"
-   mvn spring-boot:run
+   ./mvnw spring-boot:run -Dspring-boot.run.profiles=postgres
    ```
-   *Backend starts at `http://localhost:8080`.*
 
 3. **Start Frontend**:
    ```bash
@@ -74,22 +82,6 @@ When running with the default or dev profile, the application seeds the followin
    npm install
    npm run dev
    ```
-   *Frontend starts at `http://localhost:5173`.*
-
----
-
-### Option B: Running with In-Memory H2 (Zero External Dependencies)
-
-If PostgreSQL is not running locally, start the backend with the `dev` profile:
-
-```bash
-cd backend
-export JAVA_HOME=$HOME/tools/jdk-17.0.2.jdk/Contents/Home
-export PATH="$JAVA_HOME/bin:$HOME/tools/apache-maven-3.9.8/bin:$PATH"
-mvn spring-boot:run -Dspring-boot.run.profiles=dev
-```
-
-H2 database console will be accessible at: `http://localhost:8080/h2-console` (JDBC URL: `jdbc:h2:mem:taskflow_dev`, user: `sa`, password: empty).
 
 ---
 
