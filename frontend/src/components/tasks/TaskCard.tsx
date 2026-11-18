@@ -15,8 +15,17 @@ export const TaskCard: React.FC<TaskCardProps> = ({
   onDelete,
   onStatusChange,
 }) => {
+  const handleDragStart = (e: React.DragEvent) => {
+    e.dataTransfer.setData('text/plain', String(task.id));
+    e.dataTransfer.effectAllowed = 'move';
+  };
+
   return (
-    <div className="bg-white rounded-xl border border-gray-200/90 shadow-xs hover:shadow-md transition-all duration-150 p-4 space-y-3 group">
+    <div
+      draggable
+      onDragStart={handleDragStart}
+      className="bg-white rounded-xl border border-gray-200/90 shadow-xs hover:shadow-md transition-all duration-150 p-4 space-y-3 group cursor-grab active:cursor-grabbing"
+    >
       {/* Header & Badges */}
       <div className="flex items-center justify-between gap-2">
         <Badge variant="priority" priority={task.priority} size="sm" />

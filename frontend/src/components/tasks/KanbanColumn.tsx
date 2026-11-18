@@ -19,6 +19,30 @@ export const KanbanColumn: React.FC<KanbanColumnProps> = ({
   onDeleteTask,
   onStatusChange,
 }) => {
+  const [isDragOver, setIsDragOver] = React.useState(false);
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    if (!isDragOver) setIsDragOver(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragOver(false);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragOver(false);
+    const taskIdStr = e.dataTransfer.getData('text/plain');
+    if (taskIdStr) {
+      const taskId = Number(taskIdStr);
+      if (!isNaN(taskId)) {
+        onStatusChange(taskId, status);
+      }
+    }
+  };
+
   const columnStyles = {
     TODO: {
       indicator: 'bg-gray-400',
@@ -35,7 +59,16 @@ export const KanbanColumn: React.FC<KanbanColumnProps> = ({
   };
 
   return (
-    <div className="flex flex-col bg-gray-100/70 rounded-2xl p-4 border border-gray-200/80 min-h-[500px]">
+    <div
+      onDragOver={handleDragOver}
+      onDragLeave={handleDragLeave}
+      onDrop={handleDrop}
+      className={`flex flex-col rounded-2xl p-4 border transition-all duration-150 min-h-[500px] ${
+        isDragOver
+          ? 'bg-blue-50/70 border-blue-300 ring-2 ring-blue-400/20'
+          : 'bg-gray-100/70 border-gray-200/80'
+      }`}
+    >
       {/* Column Header */}
       <div className="flex items-center justify-between mb-4 px-1">
         <div className="flex items-center space-x-2">
