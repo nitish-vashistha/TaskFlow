@@ -497,8 +497,8 @@ Types: `feat`, `fix`, `docs`, `chore`, `test`, `refactor`, `style`
 | Phase 1 – Project Init | COMPLETED | a447fa1 | Spring Boot 3.2.5 (Java 17) & React 18+ (TS, Vite, Tailwind, RTL) initialized |
 | Phase 2 – Backend Domain | COMPLETED | 7530091 | User, Project, Task entities, enums, JPA repositories, test verified |
 | Phase 3 – Authentication | COMPLETED | 9d5814f | Registration, Login, BCrypt, JWT provider & filter, Spring Security, tests |
-| Phase 4 – Project Management | COMPLETED | Pending | Project CRUD, ownership enforcement, DTOs, summary endpoint, service tests |
-| Phase 5 – Task Management | IN_PROGRESS | – | Task CRUD, status, assignment, filters, pagination, service & integration tests |
-| Phase 6 – Frontend Foundation | NOT_STARTED | – | – |
+| Phase 4 – Project Management | COMPLETED | 108af5e | Project CRUD, ownership enforcement, DTOs, summary endpoint, service tests |
+| Phase 5 – Task Management | COMPLETED | Pending | Task CRUD, status updates, assignment, filtering, sorting, pagination, overdue calculation, service tests |
+| Phase 6 – Frontend Foundation | IN_PROGRESS | – | Design system, routing, Axios client with JWT interceptor, AuthContext, protected routes, login & register pages |
 | Phase 7 – Frontend Application | NOT_STARTED | – | – |
 | Phase 8 – Integration & Delivery | NOT_STARTED | – | – |
